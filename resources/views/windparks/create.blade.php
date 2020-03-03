@@ -2,11 +2,25 @@
 
 @section('crud')
     <h1>Добавяне на Ветропарк</h1>
+    <br>
 
     {!! Form::open([
         'action'    => 'WindparksController@store',
         'method'    => 'POST'
     ]) !!}
+
+        <div class="list-inline">
+            <div class="row">
+                {{-- Back button --}}
+                <a href="/windparks" class="list-inline-item btn btn-secondary">Назад</a>
+
+                {{-- Submit button --}}
+                {{ Form::submit('Запази', [
+                    'class' => 'list-inline-item btn btn-primary',
+                ]) }}
+            </div>
+        </div>
+
         {{-- Input fields  --}}
         <div class="form-group">
             {{ Form::label('title', 'Име') }}
@@ -30,11 +44,6 @@
                 'placeholder'   => 'Ветропарк с 1 турбина'
             ]) }}
         </div>
-
-        {{-- Submit button --}}
-        {{ Form::submit('Запази', [
-            'class' => 'btn btn-primary',
-        ]) }}
 
     {!! Form::close() !!}
 @endsection

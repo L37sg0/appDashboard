@@ -20,8 +20,7 @@ Route::get('/', 'FrontEndController@index');
 Route::get('management', 'FrontEndController@management');
 Route::get('structure', 'FrontEndController@structure');
 
-Route::resource('windparks', 'WindparksController');/*
-Route::get('windparks/create', 'WindparksController@create'); */
+Route::resource('windparks', 'WindparksController');
 
 
 

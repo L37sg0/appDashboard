@@ -2,11 +2,35 @@
 
 @section('crud')
     <h1>Промяна на Ветропарк</h1>
+    <div class="list-inline">
+            <div class="row">
+                {{-- Back button --}}
+                {!! Form::open([
+                    'action'    => ['WindparksController@show', $windpark->id],
+                    'method'    => 'GET',
+                    'class'     => 'pull-right'
+                ]) !!}
+
+                    {{-- Cancel button --}}
+                    {{ Form::submit('Назад', [
+                        'class' => 'list-inline-item btn btn-secondary',
+                    ]) }}
+
+                {!! Form::close() !!}
 
     {!! Form::open([
         'action'    => ['WindparksController@update', $windpark->id],
         'method'    => 'POST'
     ]) !!}
+                {{-- Hidden method --}}
+                {{ Form::hidden('_method', 'PUT') }}
+
+                {{-- Submit button --}}
+                {{ Form::submit('Запази', [
+                    'class' => 'list-inline-item btn btn-primary',
+                ]) }}
+            </div>
+        </div>
         {{-- Input fields  --}}
         <div class="form-group">
             {{ Form::label('title', 'Име') }}
@@ -30,28 +54,4 @@
                 'placeholder'   => 'Ветропарк с 1 турбина'
             ]) }}
         </div>
-
-        {{-- Hidden method --}}
-        {{ Form::hidden('_method', 'PUT') }}
-
-        {{-- Submit button --}}
-        {{ Form::submit('Запази', [
-            'class' => 'btn btn-primary',
-        ]) }}
-
-    {!! Form::close() !!}
-
-    {!! Form::open([
-        'action'    => ['WindparksController@show', $windpark->id],
-        'method'    => 'GET',
-        'class'     => 'pull-right'
-    ]) !!}
-
-        {{-- {{ Form::hidden('_method', 'GET') }} --}}
-        {{-- Cancel button --}}
-        {{ Form::submit('Отказ', [
-            'class' => 'btn btn-danger',
-        ]) }}
-
-    {!! Form::close() !!}
 @endsection
