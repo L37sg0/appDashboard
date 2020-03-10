@@ -47,8 +47,7 @@
         @foreach($turbines as $turbine)
             <tr>
             <th><a href="turbines/{{$turbine->id}}">{{$turbine->name}}</a></th>
-            {{-- <p>{!! $turbine->content !!}</p> --}}
-            <td>{{ $turbine->windpark($turbine->windpark_id)->name }}</td>
+            <td>{{ $turbine->windpark->name }}</td>
             <td>{{ $turbine->serial_number }}</td>
             <td>{{ $turbine->vendor }}</td>
             <td>{{ $turbine->model }}</td>

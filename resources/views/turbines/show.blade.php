@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('crud')
-    <h1>Инфо за Турбина</h1>
+    <h1>Инфо за {{ $turbine->name }}</h1>
     <br>
     <div class="list-inline">
         <div class="row">
@@ -21,17 +21,48 @@
         </div>
     </div>
     <br>
-    <h3>{{$turbine->name}}</h3>
-    <p>{{ $turbine->windpark($turbine->windpark_id)->name }}</p>
-    <p>{{ $turbine->serial_number }}</p>
-    <p>{{ $turbine->vendor }}</p>
-    <p>{{ $turbine->model }}</p>
-    <p>{{ $turbine->power }}</p>
-    <p>{{ $turbine->owner }}</p>
-    <p>{{ $turbine->gearbox_vendor }}</p>
-    <p>{{ $turbine->gearbox_number }}</p>
-    <p>{{ $turbine->hydraulics_vendor }}</p>
-    <p>{{ $turbine->hydraulics_number }}</p>
-    <p>{{ $turbine->transformer_vendor }}</p>
-    <p>{{ $turbine->transformer_number }}</p>
+    <table class="table table-hover">
+        <tbody>
+        <tr>
+            <th>Име</th>
+            <td>{{ $turbine->name }}</td>
+        </tr>
+        <tr>
+            <th>Ветропарк</th>
+            <td>{{ $turbine->windpark->name }}</td>
+            <th>Сериен Номер</th>
+            <td>{{ $turbine->serial_number }}</td>
+        </tr>
+        <tr>
+            <th>Производител</th>
+            <td>{{ $turbine->vendor }}</td>
+            <th>Модел</th>
+            <td>{{ $turbine->model }}</td>
+        </tr>
+        <tr>
+            <th>Мощност</th>
+            <td>{{ $turbine->power }} MW</td>
+            <th>Собственик</th>
+            <td>{{ $turbine->owner }}</td>
+        </tr>
+        <tr>
+            <th>Кутия- Производител</th>
+            <td>{{ $turbine->gearbox_vendor }}</td>
+            <th>Кутия- Номер</th>
+            <td>{{ $turbine->gearbox_vendor }}</td>
+        </tr>
+        <tr>
+            <th>Хидравлика- Производител</th>
+            <td>{{ $turbine->hydraulics_vendor }}</td>
+            <th>Хидравлика- Номер</th>
+            <td>{{ $turbine->hydraulics_vendor }}</td>
+        </tr>
+        <tr>
+            <th>Трансформатор- Производител</th>
+            <td>{{ $turbine->gearbox_vendor }}</td>
+            <th>Трансформатор- Номер</th>
+            <td>{{ $turbine->gearbox_vendor }}</td>
+        </tr>
+        </tbody>
+    </table>
 @endsection

@@ -95,6 +95,9 @@ class WindparksController extends Controller
     public function destroy($id)
     {
         $windpark = Windpark::find($id);
+        foreach($windpark->turbines as $turbine){
+            $turbine->delete();
+        }
         $windpark->delete();
 
         return redirect('/windparks')

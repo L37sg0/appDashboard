@@ -17,10 +17,8 @@ class Turbine extends Model
     public $timestamps = true;
 
     // Relationship to Winparks
-    public function windpark($id)
+    public function windpark()
     {
-        $windpark = Windpark::find($id);
-        return $windpark;
-        //return $this->belongsTo('App\Windpark');
+        return $this->belongsTo('App\Windpark');
     }
 }
