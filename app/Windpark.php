@@ -14,4 +14,10 @@ class Windpark extends Model
 
     //Timestamps
     public $timestamps = true;
+
+    // Relationship to Turbines
+    public function turbines()
+    {
+        return $this->hasMany('App\Turbine');
+    }
 }

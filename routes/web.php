@@ -21,6 +21,7 @@ Route::get('management', 'FrontEndController@management');
 Route::get('structure', 'FrontEndController@structure');
 
 Route::resource('windparks', 'WindparksController');
+Route::resource('turbines', 'TurbinesController');
 
 
 

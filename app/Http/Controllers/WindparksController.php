@@ -11,7 +11,7 @@ class WindparksController extends Controller
     public function index()
     {
         $windparks = Windpark::orderBy('updated_at', 'desc')
-                        ->paginate(1);
+                        ->paginate(10);
 
         return view('windparks.index', compact('windparks'));
     }
