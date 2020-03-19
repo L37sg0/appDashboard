@@ -12,16 +12,26 @@
 */
 
 use App\Http\Controllers\FrontEndController;
+
+// Authentication Routes
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+// Basic App Routes
 Route::get('/', 'FrontEndController@index');
 Route::get('management', 'FrontEndController@management');
 Route::get('structure', 'FrontEndController@structure');
 
+// Structure Routes
 Route::resource('windparks', 'WindparksController');
 Route::resource('turbines', 'TurbinesController');
+Route::resource('substations', 'SubstationsController');
+Route::resource('outlets', 'OutletsController');
+
+// Management Routes
+
+// HR Routes
 
 
 

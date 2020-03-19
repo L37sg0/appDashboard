@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('crud')
-    <h1>Инфо за {{ $turbine->name }}</h1>
+    <h1>Инфо за Турбина {{ $turbine->name }}</h1>
     <br>
     <div class="list-inline">
         <div class="row">

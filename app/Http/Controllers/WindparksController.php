@@ -13,7 +13,7 @@ class WindparksController extends Controller
         $windparks = Windpark::orderBy('updated_at', 'desc')
                         ->paginate(10);
 
-        return view('windparks.index', compact('windparks'));
+        return view('structure.windparks.index', compact('windparks'));
     }
 
     /* public function search(Request $request)
@@ -26,20 +26,20 @@ class WindparksController extends Controller
                         ->orderBy('updated_at', 'desc')
                         ->paginate(1);
 
-        return view('windparks.index', compact('windparks'));
+        return view('structure.windparks.index', compact('windparks'));
     } */
 
     public function show($id)
     {
         $windpark = Windpark::find($id);
 
-        return view('windparks.show')
+        return view('structure.windparks.show')
                 ->with('windpark', $windpark);
     }
 
     public function create()
     {
-        return view('windparks.create');
+        return view('structure.windparks.create');
     }
 
     public function store( Request $request)
@@ -67,7 +67,7 @@ class WindparksController extends Controller
     {
         $windpark = Windpark::find($id);
 
-        return view('windparks.edit')
+        return view('structure.windparks.edit')
                 ->with('windpark', $windpark);
     }
     public function update( Request $request, $id)
@@ -95,10 +95,7 @@ class WindparksController extends Controller
     public function destroy($id)
     {
         $windpark = Windpark::find($id);
-        foreach($windpark->turbines as $turbine){
-            $turbine->delete();
-        }
-        $windpark->delete();
+        $windpark->forceDelete();
 
         return redirect('/windparks')
                 ->with('success', 'Ветропарк Премахнат');

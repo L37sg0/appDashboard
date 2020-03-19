@@ -21,6 +21,12 @@
             <li class="active">
                 <a href="/turbines"><span class="fa fa-home mr-3"></span> Турбини</a>
             </li>
+            <li class="active">
+                <a href="/substations"><span class="fa fa-home mr-3"></span> Подстанции</a>
+            </li>
+            <li class="active">
+                <a href="/outlets"><span class="fa fa-home mr-3"></span> Изводи</a>
+            </li>
         </ul>
     </ul>
 </nav>

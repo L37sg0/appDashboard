@@ -13,7 +13,7 @@ class TurbinesController extends Controller
         $turbines = Turbine::orderBy('updated_at', 'desc')
                         ->paginate(10);
 
-        return view('turbines.index', compact('turbines'));
+        return view('structure.turbines.index', compact('turbines'));
     }
 
     /* public function search(Request $request)
@@ -26,14 +26,14 @@ class TurbinesController extends Controller
                         ->orderBy('updated_at', 'desc')
                         ->paginate(1);
 
-        return view('turbines.index', compact('turbines'));
+        return view('structure.turbines.index', compact('turbines'));
     } */
 
     public function show($id)
     {
         $turbine = Turbine::find($id);
 
-        return view('turbines.show')
+        return view('structure.turbines.show')
                 ->with('turbine', $turbine);
     }
 
@@ -42,7 +42,7 @@ class TurbinesController extends Controller
         $windparks = Windpark::all()->toArray();
         $windparks = array_column($windparks, 'name', 'id');
 
-        return view('turbines.create')
+        return view('structure.turbines.create')
                 ->with('windparks', $windparks);
     }
 
@@ -93,7 +93,7 @@ class TurbinesController extends Controller
         $windparks = Windpark::all()->toArray();
         $windparks = array_column($windparks, 'name', 'id');
 
-        return view('turbines.edit')
+        return view('structure.turbines.edit')
                 ->with('turbine', $turbine)
                 ->with('windparks', $windparks);
     }

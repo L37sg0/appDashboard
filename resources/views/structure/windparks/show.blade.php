@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('crud')
-    <h1>Инфо за Ветропарк</h1>
+    <h1>Инфо за Ветропарк {{ $windpark->name }}</h1>
     <br>
     <div class="list-inline">
         <div class="row">
@@ -21,7 +21,18 @@
         </div>
     </div>
     <br>
-    <h3>{{$windpark->name}}</h3>
-    <p>{!! $windpark->owner !!}</p>
-    <p>{!! $windpark->description !!}</p>
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+                <th>Име</th>
+                <td>{{ $windpark->name }}</td>
+            </tr>
+            <tr>
+                <th>Собственик</th>
+                <td>{{ $windpark->owner }}</td>
+                <th>Описание</th>
+                <td>{{ $windpark->description }}</td>
+            </tr>
+        </tbody>
+    </table>
 @endsection
