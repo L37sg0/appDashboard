@@ -1,7 +1,7 @@
 <nav>
     <ul class="list-unstyled components mb-5">
         <li class="active">
-            <a href="/management"><span class="fa fa-home mr-3"></span> Мениджмънт</a>
+            <a href="#"><span class="fa fa-home mr-3"></span> Мениджмънт</a>
         </li>
         <ul>
             <li class="active">
@@ -12,7 +12,7 @@
             </li>
         </ul>
         <li>
-            <a href="/structure"><span class="fa fa-gift mr-3"></span> Структура</a>
+            <a href="#"><span class="fa fa-gift mr-3"></span> Структура</a>
         </li>
         <ul>
             <li class="active">

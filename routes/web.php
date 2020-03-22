@@ -20,8 +20,8 @@ Route::get('/home', 'HomeController@index');
 
 // Basic App Routes
 Route::get('/', 'FrontEndController@index');
-Route::get('management', 'FrontEndController@management');
-Route::get('structure', 'FrontEndController@structure');
+//Route::get('management', 'FrontEndController@management');
+//Route::get('structure', 'FrontEndController@structure');
 
 // Structure Routes
 Route::resource('windparks', 'WindparksController');
